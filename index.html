@@ -15,7 +15,7 @@
       --green-mid:  #019a58;
       --green-lite: #dff2ea;
       --green-pale: #f0faf5;
-      --orange:     #e8680a;
+      --orange:      #e8680a;
       --orange-mid: #f07800;
       --orange-pale:#fff4e6;
       --orange-lite:#ffe4c0;
@@ -78,7 +78,6 @@
     .hdr-ctx-main{font-size:12px;font-weight:500;color:var(--n700);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
     .hdr-ctx-sub{font-size:10px;color:var(--n400);margin-top:1px;}
     .hdr-right{display:flex;align-items:center;gap:8px;margin-left:auto;}
-    /* 管理者設定ボタン：通常は非表示、Konami的な隠しトリガーのみ */
     .btn-admin{display:none;align-items:center;gap:5px;padding:6px 12px;border-radius:var(--r-full);background:var(--n100);font-size:11px;color:var(--n500);border:1px solid var(--n200);transition:var(--t);}
     .btn-admin:hover{background:var(--n200);}
     .btn-admin.show{display:flex;}
@@ -97,14 +96,10 @@
 
     /* ─── Sidebar ─── */
     .sb{width:var(--sidebar-w);background:var(--white);border-right:1px solid var(--n200);display:flex;flex-direction:column;flex-shrink:0;overflow:hidden;transition:transform var(--t);}
-
-    /* Upload area */
     .sb-section{padding:14px 14px 10px;}
     .sb-label{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--n400);margin-bottom:10px;display:flex;align-items:center;gap:6px;}
     .sb-label::after{content:'';flex:1;height:1px;background:var(--n200);}
-
     .up-zone{border:2px dashed rgba(1,137,77,.25);border-radius:var(--r-md);padding:16px 12px;text-align:center;cursor:pointer;transition:var(--t);background:var(--green-pale);position:relative;overflow:hidden;}
-    .up-zone::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(1,137,77,.04) 0%,transparent 60%);pointer-events:none;}
     .up-zone:hover,.up-zone.drag{border-color:var(--green);background:var(--green-lite);}
     .up-zone input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;}
     .up-ico{font-size:24px;margin-bottom:5px;}
@@ -115,26 +110,22 @@
 
     /* File list */
     .fl{padding:0 14px 6px;display:flex;flex-direction:column;gap:5px;max-height:140px;overflow-y:auto;}
-    .fi{display:flex;align-items:center;gap:8px;padding:7px 9px;background:var(--n50);border-radius:var(--r-sm);border:1px solid var(--n100);animation:slideIn .18s ease;}
-    @keyframes slideIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+    .fi{display:flex;align-items:center;gap:8px;padding:7px 9px;background:var(--n50);border-radius:var(--r-sm);border:1px solid var(--n100);}
     .fi-ico{width:24px;height:24px;border-radius:6px;background:var(--green-lite);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;}
     .fi-info{flex:1;min-width:0;}
     .fi-name{font-size:11px;font-weight:500;color:var(--n700);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
     .fi-size{font-size:9px;color:var(--n400);margin-top:1px;}
-    .fi-del{color:var(--n300);font-size:14px;padding:3px;border-radius:4px;transition:var(--t);}
-    .fi-del:hover{color:#d32f2f;background:rgba(211,47,47,.08);}
+    .fi-del{color:var(--n300);font-size:14px;padding:3px;border-radius:4px;}
 
     /* Profile card */
     .pc{margin:0 14px 10px;padding:14px;background:linear-gradient(140deg,var(--green-dark) 0%,#003d20 100%);border-radius:var(--r-md);color:white;position:relative;overflow:hidden;}
-    .pc::before{content:'';position:absolute;top:-20px;right:-20px;width:90px;height:90px;background:rgba(255,255,255,.04);border-radius:50%;}
-    .pc::after{content:'';position:absolute;bottom:-10px;right:20px;width:50px;height:50px;background:rgba(255,255,255,.03);border-radius:50%;}
     .pc-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;position:relative;}
     .pc-av{width:34px;height:34px;background:rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
-    .pc-name{font-size:13px;font-weight:500;letter-spacing:.02em;}
-    .pc-period{font-size:9px;opacity:.55;margin-top:2px;letter-spacing:.06em;}
-    .pc-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px;position:relative;}
+    .pc-name{font-size:13px;font-weight:500;}
+    .pc-period{font-size:9px;opacity:.55;margin-top:2px;}
+    .pc-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px;}
     .pc-cell{background:rgba(255,255,255,.1);border-radius:7px;padding:8px 10px;}
-    .pc-val{font-family:var(--font-mono);font-size:15px;font-weight:400;letter-spacing:.02em;}
+    .pc-val{font-family:var(--font-mono);font-size:15px;font-weight:400;}
     .pc-lbl{font-size:9px;opacity:.6;margin-top:2px;}
 
     /* Nav */
@@ -143,118 +134,76 @@
     .nav-item{display:flex;align-items:center;gap:9px;padding:9px 10px;border-radius:var(--r-sm);font-size:13px;color:var(--n600);transition:var(--t);cursor:pointer;margin-bottom:1px;}
     .nav-item:hover{background:var(--green-pale);color:var(--green-dark);}
     .nav-item.active{background:var(--green-lite);color:var(--green-dark);font-weight:500;}
-    .nav-ico{font-size:15px;width:20px;text-align:center;flex-shrink:0;}
+    .nav-ico{font-size:15px;width:20px;text-align:center;}
     .nav-badge{margin-left:auto;padding:1px 7px;background:var(--orange);color:white;border-radius:var(--r-full);font-size:9px;font-weight:700;}
 
     /* ─── Chat ─── */
     .chat{flex:1;display:flex;flex-direction:column;min-width:0;background:var(--n50);}
-
-    /* Quick chips */
     .qbar{padding:10px 16px;background:var(--white);border-bottom:1px solid var(--n200);display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;flex-shrink:0;}
-    .qbar::-webkit-scrollbar{display:none;}
     .qchip{flex-shrink:0;display:flex;align-items:center;gap:5px;padding:6px 12px;border-radius:var(--r-full);border:1.5px solid var(--n200);font-size:11.5px;font-weight:500;color:var(--n700);background:var(--white);transition:var(--t);cursor:pointer;white-space:nowrap;}
     .qchip:hover{background:var(--green-pale);border-color:rgba(1,137,77,.3);color:var(--green-dark);}
-    .qchip-ico{font-size:12px;}
-    .qchip.copied{background:var(--green-lite);border-color:var(--green);color:var(--green-dark);}
+    /* 戻るボタンのスタイル */
+    .qchip.btn-back {background: var(--n100); border-color: var(--n300); color: var(--n700); font-weight: 700;}
+    .qchip.btn-back:hover {background: var(--n200); border-color: var(--n400);}
 
     /* iframe */
     .iframe-wrap{flex:1;position:relative;overflow:hidden;}
     .iframe-wrap iframe{width:100%;height:100%;border:none;display:block;}
 
-    /* Placeholder — customer-friendly */
-    .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 20px;background:var(--n50);}
+    /* Placeholder */
+    .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 20px;background:var(--n50);z-index: 10;}
     .ph-deco{width:88px;height:88px;background:linear-gradient(145deg,var(--green-lite) 0%,var(--orange-pale) 100%);border-radius:24px;display:flex;align-items:center;justify-content:center;font-size:42px;margin-bottom:20px;animation:floatY 3.5s ease-in-out infinite;box-shadow:0 8px 24px rgba(1,137,77,.12);}
     @keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
-    .ph-ttl{font-family:var(--font-serif);font-size:20px;color:var(--green-dark);text-align:center;margin-bottom:10px;letter-spacing:.04em;}
+    .ph-ttl{font-family:var(--font-serif);font-size:20px;color:var(--green-dark);text-align:center;margin-bottom:10px;}
     .ph-body{font-size:13px;color:var(--n500);text-align:center;line-height:1.8;max-width:340px;margin-bottom:28px;}
     .ph-cards{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:24px;max-width:460px;}
-    .ph-card{display:flex;align-items:flex-start;gap:10px;padding:13px 15px;background:var(--white);border-radius:var(--r-md);border:1px solid var(--n200);box-shadow:var(--shadow-sm);width:calc(50% - 5px);min-width:180px;}
+    .ph-card{display:flex;align-items:flex-start;gap:10px;padding:13px 15px;background:var(--white);border-radius:var(--r-md);border:1px solid var(--n200);box-shadow:var(--shadow-sm);width:calc(50% - 5px);min-width:180px;cursor: pointer; transition: var(--t);}
+    .ph-card:hover {border-color: var(--green); transform: translateY(-2px); box-shadow: var(--shadow-md);}
     .ph-card-ico{font-size:20px;flex-shrink:0;margin-top:1px;}
-    .ph-card-t{font-size:12px;font-weight:500;color:var(--n700);line-height:1.5;}
-    .ph-card-s{font-size:10px;color:var(--n400);margin-top:2px;line-height:1.4;}
+    .ph-card-t{font-size:12px;font-weight:600;color:var(--n700);}
+    .ph-card-s{font-size:10px;color:var(--n400);margin-top:2px;}
     .ph-note{display:flex;align-items:center;gap:6px;padding:10px 16px;background:var(--orange-pale);border:1px solid var(--orange-lite);border-radius:var(--r-md);font-size:12px;color:var(--orange);font-weight:500;}
 
     /* ─── Admin Modal ─── */
     .modal-ov{position:fixed;inset:0;background:rgba(0,0,0,.5);backdrop-filter:blur(6px);z-index:500;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;visibility:hidden;transition:var(--t);}
     .modal-ov.open{opacity:1;visibility:visible;}
-    .modal{background:var(--white);border-radius:var(--r-xl);padding:28px;width:100%;max-width:440px;transform:translateY(14px) scale(.97);transition:var(--t);box-shadow:var(--shadow-lg);}
-    .modal-ov.open .modal{transform:none;}
-    .modal-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
-    .modal-ttl{font-family:var(--font-serif);font-size:18px;color:var(--n800);}
-    .modal-sub{font-size:11px;color:var(--n400);margin-bottom:20px;line-height:1.5;}
-    .modal-x{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--n400);font-size:18px;transition:var(--t);}
-    .modal-x:hover{background:var(--n100);color:var(--n800);}
-    .fg{margin-bottom:16px;}
-    .flbl{display:block;font-size:11px;font-weight:600;color:var(--n600);margin-bottom:5px;letter-spacing:.04em;text-transform:uppercase;}
-    .finp{width:100%;padding:10px 13px;border:1.5px solid var(--n200);border-radius:var(--r-md);font-size:13.5px;color:var(--n900);transition:var(--t);background:var(--white);font-family:var(--font-sans);}
-    .finp:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(1,137,77,.1);}
-    .fhint{font-size:10px;color:var(--n400);margin-top:5px;line-height:1.6;}
-    .fhint code{background:var(--n100);padding:1px 5px;border-radius:4px;font-family:var(--font-mono);font-size:9.5px;}
-    .btn-save{width:100%;padding:12px;background:linear-gradient(135deg,var(--green) 0%,var(--green-dark) 100%);color:white;border-radius:var(--r-md);font-size:14px;font-weight:500;transition:var(--t);box-shadow:0 3px 12px rgba(1,137,77,.28);letter-spacing:.02em;}
-    .btn-save:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(1,137,77,.38);}
-    .modal-pass{margin-bottom:16px;}
+    .modal{background:var(--white);border-radius:var(--r-xl);padding:28px;width:100%;max-width:440px;}
+    .finp{width:100%;padding:10px;border:1.5px solid var(--n200);border-radius:var(--r-md);margin-bottom:10px;}
+    .btn-save{width:100%;padding:12px;background:var(--green);color:white;border-radius:var(--r-md);font-weight:500;}
 
     /* ─── Info Panel ─── */
-    .info{width:var(--info-w);background:var(--white);border-left:1px solid var(--n200);display:flex;flex-direction:column;overflow-y:auto;flex-shrink:0;}
+    .info{width:var(--info-w);background:var(--white);border-left:1px solid var(--n200);display:flex;flex-direction:column;overflow-y:auto;}
     .ip{padding:14px;border-bottom:1px solid var(--n100);}
-    .ip-ttl{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--n400);margin-bottom:11px;display:flex;align-items:center;gap:6px;}
-    .ip-ttl::after{content:'';flex:1;height:1px;background:var(--n200);}
-
-    /* Status */
+    .ip-ttl{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--n400);margin-bottom:11px;}
     .st-row{display:flex;align-items:center;gap:8px;padding:9px 11px;background:var(--n50);border-radius:var(--r-sm);border:1px solid var(--n200);}
-    .st-dot{width:7px;height:7px;border-radius:50%;background:var(--n300);flex-shrink:0;}
-    .st-dot.on{background:var(--green);animation:pulse 2.4s ease-in-out infinite;}
-    .st-txt{font-size:11px;color:var(--n600);font-weight:500;}
-    .st-txt.on{color:var(--green-dark);}
-    .st-time{margin-left:auto;font-size:9px;color:var(--n400);font-family:var(--font-mono);}
+    .st-dot{width:7px;height:7px;border-radius:50%;background:var(--n300);}
+    .st-dot.on{background:var(--green);}
+    .st-txt{font-size:11px;color:var(--n600);}
+    .ic{padding:11px 12px;border-radius:var(--r-sm);margin-bottom:6px;}
+    .ic.g{background:var(--green-pale);}
+    .ic.o{background:var(--orange-pale);}
 
-    /* Quick Q */
-    .qq{display:flex;align-items:flex-start;gap:7px;padding:9px 10px;border-radius:var(--r-sm);background:var(--n50);border:1px solid var(--n200);cursor:pointer;transition:var(--t);margin-bottom:5px;font-size:11px;color:var(--n600);line-height:1.55;}
-    .qq:hover{background:var(--green-pale);border-color:rgba(1,137,77,.2);color:var(--green-dark);}
-    .qq-ico{font-size:12px;margin-top:1px;flex-shrink:0;}
-
-    /* Insight cards */
-    .ic{padding:11px 12px;border-radius:var(--r-sm);margin-bottom:6px;border:1px solid transparent;}
-    .ic.g{background:var(--green-pale);border-color:rgba(1,137,77,.12);}
-    .ic.o{background:var(--orange-pale);border-color:rgba(232,104,10,.12);}
-    .ic-ico{font-size:16px;margin-bottom:3px;}
-    .ic-ttl{font-size:11px;font-weight:600;color:var(--n700);margin-bottom:2px;}
-    .ic-body{font-size:10px;color:var(--n500);line-height:1.55;}
-
-    /* ─── Footer ─── */
+    /* Footer */
     .footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:11px 20px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
-    .ft-l{display:flex;align-items:center;gap:10px;}
-    .ft-brand{font-family:var(--font-serif);font-size:13px;color:rgba(255,255,255,.85);letter-spacing:.06em;}
-    .ft-copy{font-size:9.5px;letter-spacing:.03em;}
-    .ft-links{display:flex;gap:14px;}
-    .ft-a{font-size:9.5px;color:rgba(255,255,255,.45);transition:var(--t);}
-    .ft-a:hover{color:rgba(255,255,255,.9);}
+    .ft-brand{font-family:var(--font-serif);font-size:13px;color:white;}
+    .ft-copy{font-size:9.5px;}
 
     /* Toast */
-    .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(8px);background:var(--n900);color:white;padding:9px 18px;border-radius:var(--r-full);font-size:12px;font-weight:500;opacity:0;transition:opacity .25s ease,transform .25s ease;pointer-events:none;z-index:1000;white-space:nowrap;}
-    .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+    .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--n900);color:white;padding:9px 18px;border-radius:var(--r-full);font-size:12px;opacity:0;transition:var(--t);z-index:1000;}
+    .toast.show{opacity:1;}
 
-    /* Responsive */
     @media(max-width:1080px){.info{display:none;}}
     @media(max-width:768px){
-      :root{--sidebar-w:100%;}
-      .sb{position:fixed;top:var(--header-h);left:0;bottom:0;z-index:200;transform:translateX(-100%);box-shadow:var(--shadow-lg);}
+      .sb{position:fixed;top:var(--header-h);left:0;bottom:0;z-index:200;transform:translateX(-100%);}
       .sb.open{transform:none;}
-      .sb-ov{display:none;position:fixed;inset:0;top:var(--header-h);background:rgba(0,0,0,.35);z-index:190;}
+      .sb-ov{display:none;position:fixed;inset:0;top:var(--header-h);background:rgba(0,0,0,.3);z-index:190;}
       .sb-ov.open{display:block;}
       .burger{display:flex;}
-      .ft-links{display:none;}
-      .ph-card{width:100%;}
-    }
-    @media(max-width:420px){
-      .hdr-name em{display:none;}
-      .hdr-ctx-sub{display:none;}
     }
   </style>
 </head>
 <body>
 
-<!-- ─── Loading ─── -->
 <div id="ls">
   <div class="ls-inner">
     <div class="ls-mark">🌿</div>
@@ -264,14 +213,9 @@
   </div>
 </div>
 
-<!-- ─── App ─── -->
 <div id="app">
-
-  <!-- Header -->
   <header class="hdr">
-    <button class="burger" id="burgerBtn" aria-label="メニュー">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="burger" id="burgerBtn"><span></span><span></span><span></span></button>
     <div class="hdr-logo">
       <div class="hdr-mark">🌿</div>
       <div class="hdr-name">おかねの相談室<em>Resona AI Financial Advisor</em></div>
@@ -282,7 +226,6 @@
       <div class="hdr-ctx-sub" id="hdrCtxSub">データをアップロードして相談開始</div>
     </div>
     <div class="hdr-right">
-      <!-- 管理者ボタン：通常非表示 -->
       <button class="btn-admin" id="adminBtn" onclick="openAdmin()">⚙ 管理設定</button>
       <div class="hdr-status">
         <div class="hdr-dot" id="hdrDot"></div>
@@ -294,11 +237,7 @@
   <div class="sb-ov" id="sbOv" onclick="closeSb()"></div>
 
   <div class="wrap">
-
-    <!-- ─── Sidebar ─── -->
     <aside class="sb" id="sb">
-
-      <!-- Upload -->
       <div class="sb-section">
         <div class="sb-label">データを読み込む</div>
         <div class="up-zone" id="upZone">
@@ -306,422 +245,192 @@
           <div class="up-ico">📂</div>
           <div class="up-main">クリックまたはドラッグ&ドロップ</div>
           <div class="up-hint">家計・取引データをアップロード</div>
-          <div class="up-fmts">
-            <span class="fmt-tag">Excel</span>
-            <span class="fmt-tag">CSV</span>
-            <span class="fmt-tag">PDF</span>
-          </div>
         </div>
         <div class="fl" id="fl"></div>
       </div>
 
-      <!-- Profile -->
       <div style="padding:0 14px 10px;">
         <div class="pc">
-          <div class="pc-row">
-            <div class="pc-av">👤</div>
-            <div>
-              <div class="pc-name" id="pcName">田中 美咲 様</div>
-              <div class="pc-period">分析期間：2020〜2024年</div>
-            </div>
+          <div class="pc-row"><div class="pc-av">👤</div>
+            <div><div class="pc-name" id="pcName">田中 美咲 様</div><div class="pc-period">分析期間：2020〜2024年</div></div>
           </div>
           <div class="pc-grid">
-            <div class="pc-cell">
-              <div class="pc-val" id="statFiles">0件</div>
-              <div class="pc-lbl">読込ファイル</div>
-            </div>
-            <div class="pc-cell">
-              <div class="pc-val">5年</div>
-              <div class="pc-lbl">分析期間</div>
-            </div>
+            <div class="pc-cell"><div class="pc-val" id="statFiles">0件</div><div class="pc-lbl">読込ファイル</div></div>
+            <div class="pc-cell"><div class="pc-val">5年</div><div class="pc-lbl">分析期間</div></div>
           </div>
         </div>
       </div>
 
-      <!-- Nav -->
       <nav class="sb-nav">
         <div class="nav-grp">メニュー</div>
         <div class="nav-item active" onclick="setNav(this,'AIに相談する','データをアップロードして相談開始')">
-          <span class="nav-ico">💬</span>AIに相談する
-          <span class="nav-badge">AI</span>
+          <span class="nav-ico">💬</span>AIに相談する<span class="nav-badge">AI</span>
         </div>
         <div class="nav-item" onclick="setNav(this,'支出を分析する','支出の傾向と変化を確認')">
           <span class="nav-ico">📊</span>支出を分析する
         </div>
-        <div class="nav-item" onclick="setNav(this,'目標を立てる','貯蓄・投資の目標設定')">
-          <span class="nav-ico">🎯</span>目標を立てる
-        </div>
-        <div class="nav-item" onclick="setNav(this,'家計カレンダー','月別収支カレンダー')">
-          <span class="nav-ico">📅</span>家計カレンダー
-        </div>
-        <div class="nav-grp">サービス</div>
-        <div class="nav-item" onclick="setNav(this,'りそな銀行サービス','各種金融サービスのご案内')">
-          <span class="nav-ico">🏦</span>りそな銀行サービス
-        </div>
-        <div class="nav-item" onclick="setNav(this,'レポートを作成','家計レポートを自動生成')">
-          <span class="nav-ico">📋</span>レポートを作成
-        </div>
       </nav>
     </aside>
 
-    <!-- ─── Chat ─── -->
     <main class="chat">
-      <!-- Quick chips -->
       <div class="qbar" id="qbar">
+        <button id="backBtn" class="qchip btn-back" style="display:none;" onclick="hideDify()">← 戻る</button>
         <button class="qchip" onclick="qSend(this)"><span class="qchip-ico">📈</span>5年間の支出傾向を教えて</button>
         <button class="qchip" onclick="qSend(this)"><span class="qchip-ico">💰</span>毎月の貯蓄余力は？</button>
-        <button class="qchip" onclick="qSend(this)"><span class="qchip-ico">🎄</span>イベント出費の総額は？</button>
-        <button class="qchip" onclick="qSend(this)"><span class="qchip-ico">🏠</span>住宅ローン返済計画を確認したい</button>
-        <button class="qchip" onclick="qSend(this)"><span class="qchip-ico">👶</span>子育て費用の見直しポイント</button>
         <button class="qchip" onclick="qSend(this)"><span class="qchip-ico">📱</span>固定費を削減する方法</button>
-        <button class="qchip" onclick="qSend(this)"><span class="qchip-ico">🎓</span>教育費の積立計画を立てたい</button>
-        <button class="qchip" onclick="qSend(this)"><span class="qchip-ico">🌴</span>老後資金は足りている？</button>
       </div>
 
-      <!-- iframe / placeholder -->
       <div class="iframe-wrap">
-        <iframe id="difyFrame" src="about:blank" title="AIチャット" style="display:none;"></iframe>
+        <iframe id="difyFrame" src="about:blank" title="AIチャット" style="display:none; width: 100%; height: 100%;" frameborder="0" allow="microphone"></iframe>
 
         <div class="ph" id="ph">
           <div class="ph-deco">🤖</div>
           <div class="ph-ttl">AIファイナンシャルアドバイザー</div>
-          <div class="ph-body">
-            家計データをもとに、お金に関するあらゆるご相談をAIがサポートします。<br>
-            左のパネルからデータをアップロードして、さっそく相談してみましょう。
-          </div>
+          <div class="ph-body">家計データをもとに、お金に関するあらゆるご相談をAIがサポートします。</div>
+          
           <div class="ph-cards">
-            <div class="ph-card">
-              <div class="ph-card-ico">📂</div>
-              <div>
-                <div class="ph-card-t">データをアップロード</div>
-                <div class="ph-card-s">クレカ・銀行の明細をExcel/CSVで読み込む</div>
-              </div>
-            </div>
-            <div class="ph-card">
+            <div class="ph-card" onclick="initDify()">
               <div class="ph-card-ico">💬</div>
               <div>
                 <div class="ph-card-t">AIに質問する</div>
-                <div class="ph-card-s">上のチップをタップ、または自由に入力</div>
+                <div class="ph-card-s">チャットを開始して、自由に入力・相談</div>
               </div>
             </div>
-            <div class="ph-card">
+            <div class="ph-card" onclick="initDify()">
               <div class="ph-card-ico">📊</div>
               <div>
-                <div class="ph-card-t">分析レポートを受け取る</div>
-                <div class="ph-card-s">支出傾向・節約ポイントをわかりやすく解説</div>
-              </div>
-            </div>
-            <div class="ph-card">
-              <div class="ph-card-ico">🎯</div>
-              <div>
-                <div class="ph-card-t">目標に向けた計画を立てる</div>
-                <div class="ph-card-s">老後・住宅・教育費など長期プランを作成</div>
+                <div class="ph-card-t">分析レポート</div>
+                <div class="ph-card-s">支出傾向をAIが詳しく解説</div>
               </div>
             </div>
           </div>
-          <div class="ph-note">🔒 アップロードされたデータは本サービス内でのみ使用されます</div>
+          <div class="ph-note">🔒 アップロードされたデータは安全に保護されます</div>
         </div>
       </div>
     </main>
 
-    <!-- ─── Info Panel ─── -->
     <aside class="info">
       <div class="ip">
         <div class="ip-ttl">接続ステータス</div>
         <div class="st-row">
-          <div class="st-dot" id="stDot"></div>
-          <span class="st-txt" id="stTxt">接続待機中</span>
-          <span class="st-time" id="stTime">—</span>
-        </div>
-      </div>
-
-      <div class="ip">
-        <div class="ip-ttl">質問例（タップでコピー）</div>
-        <div class="qq" onclick="cpQ(this)"><span class="qq-ico">💡</span>食費が高い月と節約のコツを教えて</div>
-        <div class="qq" onclick="cpQ(this)"><span class="qq-ico">📊</span>育休前と復帰後で生活費はどう変わった？</div>
-        <div class="qq" onclick="cpQ(this)"><span class="qq-ico">🎯</span>老後資金3000万円を貯めるには月いくら積み立てれば？</div>
-        <div class="qq" onclick="cpQ(this)"><span class="qq-ico">🏖️</span>今年の旅行予算はいくらまで許容できる？</div>
-        <div class="qq" onclick="cpQ(this)"><span class="qq-ico">📱</span>サブスクの総額と見直しポイントは？</div>
-      </div>
-
-      <div class="ip">
-        <div class="ip-ttl">家計インサイト</div>
-        <div class="ic g">
-          <div class="ic-ico">✅</div>
-          <div class="ic-ttl">積立NISAを5年継続中</div>
-          <div class="ic-body">月3〜7万円を継続投資。長期的な資産形成の基盤が整っています。</div>
-        </div>
-        <div class="ic o">
-          <div class="ic-ico">⚠️</div>
-          <div class="ic-ttl">年末・GWに支出が集中</div>
-          <div class="ic-body">12月・5月・8月に大型出費の傾向。予算計画を立てましょう。</div>
-        </div>
-        <div class="ic g">
-          <div class="ic-ico">🌱</div>
-          <div class="ic-ttl">5年で残高が約5倍に増加</div>
-          <div class="ic-body">85万→433万円。堅実な家計管理ができています。</div>
-        </div>
-      </div>
-
-      <div class="ip">
-        <div class="ip-ttl">りそなおすすめ</div>
-        <div class="ic g" style="cursor:pointer;">
-          <div class="ic-ico">🏦</div>
-          <div class="ic-ttl">資産運用相談（無料）</div>
-          <div class="ic-body">専門スタッフによる個別相談を予約できます。</div>
-        </div>
-        <div class="ic o" style="cursor:pointer;">
-          <div class="ic-ico">📋</div>
-          <div class="ic-ttl">ライフプランシミュレーター</div>
-          <div class="ic-body">教育費・老後・住宅ローンを一括シミュレーション。</div>
+          <div class="st-dot" id="stDot"></div><span class="st-txt" id="stTxt">接続待機中</span>
         </div>
       </div>
     </aside>
   </div>
 
-  <!-- Footer -->
   <footer class="footer">
-    <div class="ft-l">
-      <div class="ft-brand">りそな銀行</div>
-      <div class="ft-copy">© 2025 Resona Bank, Ltd. &nbsp;AIアドバイスは参考情報です。</div>
-    </div>
-    <div class="ft-links">
-      <a href="#" class="ft-a">プライバシーポリシー</a>
-      <a href="#" class="ft-a">利用規約</a>
-      <a href="#" class="ft-a">免責事項</a>
-      <a href="#" class="ft-a">お問い合わせ</a>
-    </div>
+    <div class="ft-brand">りそな銀行</div>
+    <div class="ft-copy">© 2025 Resona Bank, Ltd.</div>
   </footer>
 </div>
 
-<!-- ─── Admin Modal (hidden by default) ─── -->
 <div class="modal-ov" id="modalOv">
   <div class="modal">
-    <div class="modal-hdr">
-      <div class="modal-ttl">管理設定</div>
-      <button class="modal-x" onclick="closeAdmin()">✕</button>
-    </div>
-    <div class="modal-sub">この設定は管理者のみが行います。顧客画面には表示されません。</div>
-
-    <!-- 簡易パスワード認証 -->
-    <div id="adminAuth">
-      <div class="fg modal-pass">
-        <label class="flbl" for="adminPw">管理者パスワード</label>
-        <input type="password" class="finp" id="adminPw" placeholder="パスワードを入力" onkeydown="if(event.key==='Enter')checkPw()">
-      </div>
-      <button class="btn-save" onclick="checkPw()">認証する</button>
-    </div>
-
-    <div id="adminForm" style="display:none;">
-      <div class="fg">
-        <label class="flbl" for="difyUrl">Dify チャット埋め込みURL</label>
-        <input type="url" class="finp" id="difyUrl" placeholder="https://udify.app/chatbot/xxxxxxxx">
-        <div class="fhint">
-          Dify管理画面 →「公開する」→「埋め込む」→ iframe の <code>src</code> URLをコピー。<br>
-          例: <code>https://udify.app/chatbot/xxxx</code>
-        </div>
-      </div>
-      <div class="fg">
-        <label class="flbl" for="uName">表示ユーザー名（任意）</label>
-        <input type="text" class="finp" id="uName" placeholder="田中 美咲">
-      </div>
-      <div class="fg">
-        <label class="flbl" for="newPw">管理者パスワード変更（任意）</label>
-        <input type="password" class="finp" id="newPw" placeholder="新しいパスワード（変更する場合のみ）">
-      </div>
-      <button class="btn-save" onclick="saveConf()">💾 保存して接続</button>
-    </div>
+    <h3>管理設定</h3>
+    <input type="url" class="finp" id="difyUrl" placeholder="Dify URL">
+    <button class="btn-save" onclick="saveConf()">保存して接続</button>
+    <button onclick="closeAdmin()" style="margin-top:10px;">閉じる</button>
   </div>
 </div>
 
-<!-- Toast -->
 <div class="toast" id="toast"></div>
 
 <script>
-// ─── State ───
-let files = [];
-let dUrl  = localStorage.getItem('dUrl')  || '';
-let uName = localStorage.getItem('uName') || '田中 美咲';
-// デフォルトパスワード: "resona2025" （本番では変更してください）
-const DEFAULT_PW = 'resona2025';
-let adminPw = localStorage.getItem('adminPw') || DEFAULT_PW;
+// 初期設定 (URLが保存されていない場合のデフォルト)
+const DEFAULT_DIFY_URL = "https://udify.app/chatbot/fCguvhc6kbDWNOAZ";
+let dUrl = localStorage.getItem('dUrl') || DEFAULT_DIFY_URL;
 
-// ─── Init ───
 window.addEventListener('load', () => {
   setTimeout(() => {
     document.getElementById('ls').classList.add('hidden');
     document.getElementById('app').classList.add('visible');
-    document.getElementById('pcName').textContent = uName + ' 様';
-    if (dUrl) initDify();
-    else setStatusOff();
-  }, 2000);
+    // ステータス更新
+    if (dUrl) setStatusOn();
+  }, 1500);
 });
 
-// ─── Status helpers ───
+// ─── Dify 表示・非表示 ───
+function initDify() {
+  const frame = document.getElementById('difyFrame');
+  const ph = document.getElementById('ph');
+  const backBtn = document.getElementById('backBtn');
+
+  // iframeにURLをセット（未設定ならデフォルト）
+  if (frame.src === "about:blank" || frame.src !== dUrl) {
+    frame.src = dUrl;
+  }
+
+  // 表示の切り替え
+  frame.style.display = 'block';
+  ph.style.display = 'none';
+  backBtn.style.display = 'flex'; // 戻るボタンを表示
+  
+  showToast('AIアドバイザーが起動しました');
+}
+
+function hideDify() {
+  const frame = document.getElementById('difyFrame');
+  const ph = document.getElementById('ph');
+  const backBtn = document.getElementById('backBtn');
+
+  frame.style.display = 'none';
+  ph.style.display = 'flex';
+  backBtn.style.display = 'none'; // 戻るボタンを隠す
+}
+
+// ─── その他UI制御 ───
 function setStatusOn() {
-  const dot  = document.getElementById('hdrDot');
-  const stxt = document.getElementById('hdrStxt');
-  const sDot = document.getElementById('stDot');
-  const sTxt = document.getElementById('stTxt');
-  const sTim = document.getElementById('stTime');
-  dot.classList.add('on');
-  stxt.textContent = 'AI 接続済み';
-  stxt.classList.add('on');
-  sDot.classList.add('on');
-  sTxt.textContent = 'AI 稼働中';
-  sTxt.classList.add('on');
-  sTim.textContent = now();
-}
-function setStatusOff() {
-  document.getElementById('hdrStxt').textContent = 'AI 未接続';
-}
-function now() {
-  return new Date().toLocaleTimeString('ja-JP',{hour:'2-digit',minute:'2-digit'});
+  document.getElementById('hdrDot').classList.add('on');
+  document.getElementById('hdrStxt').textContent = 'AI 接続済み';
+  document.getElementById('stDot').classList.add('on');
+  document.getElementById('stTxt').textContent = 'AI 稼働中';
 }
 
-// ─── Sidebar ───
-const sbEl   = document.getElementById('sb');
-const sbOvEl = document.getElementById('sbOv');
-document.getElementById('burgerBtn').addEventListener('click', () => {
-  sbEl.classList.toggle('open');
-  sbOvEl.classList.toggle('open');
-});
-function closeSb() { sbEl.classList.remove('open'); sbOvEl.classList.remove('open'); }
-
-// ─── Nav ───
 function setNav(el, main, sub) {
   document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
   el.classList.add('active');
   document.getElementById('hdrCtxMain').textContent = main;
-  document.getElementById('hdrCtxSub').textContent  = sub || '';
-  if (window.innerWidth <= 768) closeSb();
+  document.getElementById('hdrCtxSub').textContent = sub;
+  
+  // 「AIに相談する」メニューが押されたときもチャットを開く
+  if (main === 'AIに相談する') initDify();
+  else hideDify();
 }
 
-// ─── Upload ───
-const upZone = document.getElementById('upZone');
-const fileInp = document.getElementById('fileInp');
-upZone.addEventListener('dragover', e => { e.preventDefault(); upZone.classList.add('drag'); });
-upZone.addEventListener('dragleave', () => upZone.classList.remove('drag'));
-upZone.addEventListener('drop', e => { e.preventDefault(); upZone.classList.remove('drag'); handleFiles(e.dataTransfer.files); });
-fileInp.addEventListener('change', e => handleFiles(e.target.files));
-
-function handleFiles(list) {
-  Array.from(list).forEach(f => { if (!files.find(x => x.name === f.name)) files.push(f); });
-  renderFiles();
-}
-function renderFiles() {
-  document.getElementById('fl').innerHTML = files.map((f, i) => `
-    <div class="fi">
-      <div class="fi-ico">${fIco(f.name)}</div>
-      <div class="fi-info">
-        <div class="fi-name">${f.name}</div>
-        <div class="fi-size">${fSz(f.size)}</div>
-      </div>
-      <button class="fi-del" onclick="rmFile(${i})">✕</button>
-    </div>`).join('');
-  document.getElementById('statFiles').textContent = files.length + '件';
-}
-function rmFile(i) { files.splice(i, 1); renderFiles(); }
-function fIco(n) {
-  if (/\.xlsx?$/i.test(n)) return '📊';
-  if (/\.csv$/i.test(n))  return '📋';
-  if (/\.pdf$/i.test(n))  return '📄';
-  return '📁';
-}
-function fSz(b) {
-  if (b < 1024)    return b + 'B';
-  if (b < 1048576) return (b/1024).toFixed(1) + 'KB';
-  return (b/1048576).toFixed(1) + 'MB';
-}
-
-// ─── Admin Modal ───
-// 隠しアクセス：ロゴを5回クリック
-let logoClicks = 0, logoTimer;
-document.querySelector('.hdr-mark').addEventListener('click', () => {
-  logoClicks++;
-  clearTimeout(logoTimer);
-  if (logoClicks >= 5) { logoClicks = 0; openAdmin(); return; }
-  logoTimer = setTimeout(() => logoClicks = 0, 2000);
-});
-
-function openAdmin() {
-  document.getElementById('adminPw').value = '';
-  document.getElementById('adminAuth').style.display = 'block';
-  document.getElementById('adminForm').style.display = 'none';
-  document.getElementById('modalOv').classList.add('open');
-}
-function closeAdmin() { document.getElementById('modalOv').classList.remove('open'); }
-document.getElementById('modalOv').addEventListener('click', function(e) { if (e.target===this) closeAdmin(); });
-
-function checkPw() {
-  const pw = document.getElementById('adminPw').value;
-  if (pw === adminPw) {
-    document.getElementById('adminAuth').style.display = 'none';
-    document.getElementById('adminForm').style.display = 'block';
-    document.getElementById('difyUrl').value = dUrl;
-    document.getElementById('uName').value  = uName;
-  } else {
-    showToast('パスワードが正しくありません');
-    document.getElementById('adminPw').focus();
-  }
-}
-
-function saveConf() {
-  const url  = document.getElementById('difyUrl').value.trim();
-  const name = document.getElementById('uName').value.trim();
-  const npw  = document.getElementById('newPw').value.trim();
-  if (!url) { showToast('URLを入力してください'); return; }
-  dUrl  = url;
-  uName = name || '田中 美咲';
-  localStorage.setItem('dUrl',  dUrl);
-  localStorage.setItem('uName', uName);
-  if (npw) { adminPw = npw; localStorage.setItem('adminPw', adminPw); }
-  document.getElementById('pcName').textContent = uName + ' 様';
-  closeAdmin();
-  initDify();
-  showToast('✅ 設定を保存しました');
-}
-
-// ─── Dify ───
-function initDify() {
-  const frame = document.getElementById('difyFrame');
-  const ph    = document.getElementById('ph');
-  frame.src = dUrl;
-  frame.style.display = 'block';
-  ph.style.display = 'none';
-  setStatusOn();
-}
-
-// ─── Quick chips ───
 function qSend(btn) {
-  const txt = btn.querySelector('.qchip-ico').nextSibling.textContent.trim() || btn.textContent.trim();
+  // チャットが開いていない場合は開く
+  if (document.getElementById('difyFrame').style.display === 'none') {
+    initDify();
+  }
+  const txt = btn.innerText.replace(/^[^\s]+\s/, ''); // アイコンを除去
   navigator.clipboard.writeText(txt).then(() => {
-    btn.classList.add('copied');
-    const orig = btn.innerHTML;
-    btn.innerHTML = '<span>✓</span> コピーしました';
-    setTimeout(() => { btn.innerHTML = orig; btn.classList.remove('copied'); }, 1800);
-  }).catch(() => showToast('コピー: ' + txt));
-}
-
-// ─── Sample Q copy ───
-function cpQ(el) {
-  const txt = el.textContent.trim();
-  navigator.clipboard.writeText(txt).then(() => {
-    showToast('📋 クリップボードにコピーしました');
-    el.style.background = 'var(--green-pale)';
-    setTimeout(() => el.style.background = '', 800);
+    showToast('質問をコピーしました。チャットに貼り付けてください。');
   });
 }
 
-// ─── Toast ───
-let toastTimer;
+// ─── 管理者設定 ───
+function openAdmin() { document.getElementById('modalOv').classList.add('open'); document.getElementById('difyUrl').value = dUrl; }
+function closeAdmin() { document.getElementById('modalOv').classList.remove('open'); }
+function saveConf() {
+  dUrl = document.getElementById('difyUrl').value;
+  localStorage.setItem('dUrl', dUrl);
+  closeAdmin();
+  showToast('URLを更新しました');
+}
+
 function showToast(msg) {
   const t = document.getElementById('toast');
   t.textContent = msg;
   t.classList.add('show');
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => t.classList.remove('show'), 2400);
+  setTimeout(() => t.classList.remove('show'), 3000);
 }
+
+// サイドバー開閉
+const sb = document.getElementById('sb');
+const sbOv = document.getElementById('sbOv');
+document.getElementById('burgerBtn').onclick = () => { sb.classList.add('open'); sbOv.classList.add('open'); };
+function closeSb() { sb.classList.remove('open'); sbOv.classList.remove('open'); }
 </script>
 </body>
 </html>
